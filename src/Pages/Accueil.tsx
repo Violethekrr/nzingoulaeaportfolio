@@ -187,7 +187,7 @@ const experiencesData = [
     Id: 1,
     annee: "Avril — Juin 2025",
     Titre: "Société RAMI Rénovation",
-    Poste: "Stage ouvrier — second œuvre · 3 mois",
+    Poste: "Stage ouvrier — second œuvre · 2 mois",
     Icon: FaHardHat,
     Badge: "Chantier",
     BadgeColor: "bg-black/10 text-black dark:bg-white/10 dark:text-white",
@@ -1440,10 +1440,10 @@ export default function Accueil() {
                     className="relative sm:pl-16"
                   >
                     <div
-                      className="absolute left-0 top-6 z-10 hidden h-10 w-10 items-center justify-center rounded-full text-white shadow-lg sm:flex"
+                      className={`absolute left-0 top-6 z-10 hidden h-10 w-10 items-center justify-center rounded-full ${!isDark? 'text-white': 'text-black'} shadow-lg sm:flex`}
                       style={{ backgroundColor: accent }}
                     >
-                      <experience.Icon className="h-4 w-4" />
+                      <experience.Icon className={`h-4 w-4  `} />
                     </div>
 
                     <div
@@ -1827,7 +1827,7 @@ export default function Accueil() {
                     className="relative sm:pl-16"
                   >
                     <div
-                      className="absolute left-0 top-4 z-10 hidden h-10 w-10 items-center justify-center rounded-full text-xs font-bold text-white sm:flex"
+                      className={`absolute left-0 top-4 z-10 hidden h-10 w-10 items-center justify-center rounded-full text-xs font-bold ${!isDark? 'text-white': 'text-black'}  sm:flex`}
                       style={{ backgroundColor: accent }}
                     >
                       {index + 1}
