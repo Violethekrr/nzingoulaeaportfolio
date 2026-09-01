@@ -55,22 +55,45 @@ import type { ProjetType } from "../types";
 ========================================================= */
 const LOGO_COLORS = {
   navy: "#011C5F",
-  deepBlue: "#013597",
-  blue: "#015CE1",
-  lightBlue: "#0198FB",
-  cyan: "#00DFFB",
-  gradient:
-    "#011C5F",
+  deepBlue: "#011C5F",
+  blue: "#011C5F",
+  lightBlue: "#011C5F",
+  cyan: "#011C5F",
+  gradient: "#011C5F",
+  nav: '#015CE1'
 };
 const OUTILS = [
-  { label: "AutoCAD", Icon: FaDraftingCompass, color: LOGO_COLORS.blue },
-  { label: "Civil 3D", Icon: FaMountain, color: LOGO_COLORS.lightBlue },
-  { label: "Robot SA", Icon: FaCalculator, color: LOGO_COLORS.deepBlue },
-  { label: "Revit", Icon: FaCubes, color: LOGO_COLORS.cyan },
-  { label: "Excel", Icon: FaTable, color: LOGO_COLORS.blue },
-  { label: "Eurocodes", Icon: FaBookOpen, color: LOGO_COLORS.navy },
+  {
+    label: "AutoCAD",
+    Icon: FaDraftingCompass,
+    color: "#E51050",
+  },
+  {
+    label: "Civil 3D",
+    Icon: FaMountain,
+    color: "#C0008F",
+  },
+  {
+    label: "Robot SA",
+    Icon: FaCalculator,
+    color: "#D7194A",
+  },
+  {
+    label: "Revit",
+    Icon: FaCubes,
+    color: "#1F6BFF",
+  },
+  {
+    label: "Excel",
+    Icon: FaTable,
+    color: "#217346",
+  },
+  {
+    label: "Eurocodes",
+    Icon: FaBookOpen,
+    color: "#005EA8",
+  },
 ];
-
 
 
 
@@ -154,7 +177,7 @@ const projetsData: ProjetType[] = [
       { val: "Équipe", label: "conception collective" },
     ],
     techs: ["RDM", "Treillis", "Essai de rupture", "Travail en équipe"],
-    image: "/atelier-treillis.webp",
+    image: "/treillis.webp",
     color: LOGO_COLORS.navy,
   },
 ];
@@ -167,7 +190,7 @@ const experiencesData = [
     Poste: "Stage ouvrier — second œuvre · 3 mois",
     Icon: FaHardHat,
     Badge: "Chantier",
-    BadgeColor: "bg-[#0198FB]/15 text-[#013597] dark:bg-[#0198FB]/20 dark:text-[#00DFFB]",
+    BadgeColor: "bg-black/10 text-black dark:bg-white/10 dark:text-white",
     detail:
       "Immersion complète sur des chantiers de rénovation de bâtiment. Participation aux travaux de second œuvre, préparation des supports et finitions, application des consignes d'exécution et des règles de sécurité. Une expérience qui donne une lecture concrète du séquencement d'un chantier et des contraintes réelles de mise en œuvre, souvent absentes des notes de calcul.",
     competences: [
@@ -185,7 +208,7 @@ const experiencesData = [
     Poste: "Équipier polyvalent",
     Icon: FaClipboardCheck,
     Badge: "Job étudiant",
-    BadgeColor: "bg-[#015CE1]/10 text-[#011C5F] dark:bg-[#015CE1]/20 dark:text-[#0198FB]",
+    BadgeColor: "bg-black/10 text-black dark:bg-white/10 dark:text-white",
     detail:
       "Prise de commande au drive et en borne, encaissement. Travail en cadence soutenue, en équipe, avec une exigence de fiabilité sur chaque opération.",
     competences: ["Cadence", "Relation client", "Fiabilité"],
@@ -465,20 +488,20 @@ export default function Accueil() {
     }
   };
 
-  const accent = isDark ? LOGO_COLORS.blue : LOGO_COLORS.blue;
+  const accent = isDark ? "#FFFFFF" : "#000000";
   const bg = isDark ? "bg-black" : "bg-[#F6F8F9]";
   const bgNav = isDark ? "bg-black/95" : "bg-[#F6F8F9]/95";
   const bgCard = isDark ? "bg-gray-950" : "bg-white";
   const border = isDark
-    ? "border-[#0198FB]/35"
-    : "border-[#015CE1]/15";
-  const textMain = isDark ? "text-gray-100" : "text-[#011C5F]";
+    ? "border-white/15"
+    : "border-black/15";
+  const textMain = isDark ? "text-gray-100" : "text-black";
   const textMut = isDark ? "text-gray-400" : "text-gray-500";
   const tagBg = isDark
-    ? "bg-[#015CE1]/20 text-[#00DFFB]"
-    : "bg-[#0198FB]/10 text-[#013597]";
+    ? "bg-white/10 text-white"
+    : "bg-black/5 text-black";
 
-  const inputCls = `w-full text-sm px-4 py-3 rounded-xl border ${border} ${bgCard} ${textMain} outline-none focus:ring-1 focus:ring-[#0198FB]/45 transition`;
+  const inputCls = `w-full text-sm px-4 py-3 rounded-xl border ${border} ${bgCard} ${textMain} outline-none focus:ring-1 focus:ring-black/20 transition`;
 
   useEffect(() => {
     const onScroll = () => {
@@ -537,8 +560,8 @@ export default function Accueil() {
       className={`${bg} ${textMain} min-h-screen font-sans transition-colors duration-300`}
       style={{
         backgroundImage: `
-          linear-gradient(rgba(1, 92, 225, 0.10) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(1, 92, 225, 0.10) 1px, transparent 1px)
+          linear-gradient(${isDark ? "rgba(255,255,255,0.035)" : "rgba(1,28,95,0.035)"} 1px, transparent 1px),
+          linear-gradient(90deg, ${isDark ? "rgba(255,255,255,0.035)" : "rgba(1,28,95,0.035)"} 1px, transparent 1px)
         `,
         backgroundSize: "40px 40px",
       }}
@@ -609,7 +632,7 @@ export default function Accueil() {
                   ${isActive ? "font-semibold after:w-full" : "after:w-0"}`}
                 style={{
                   color: isActive
-                    ? accent
+                    ? LOGO_COLORS.nav
                     : isDark
                     ? "#ffffff"
                     : LOGO_COLORS.navy,
@@ -692,7 +715,7 @@ export default function Accueil() {
         {/* HERO */}
         <section
           id="accueil"
-          className="relative min-h-[620px] overflow-hidden"
+          className="relative min-h-[560px] md:min-h-[600px] overflow-hidden"
         >
           <div className="absolute inset-0">
             <img
@@ -707,8 +730,8 @@ export default function Accueil() {
               className="absolute inset-0"
               style={{
                 background: isDark
-                  ? "linear-gradient(90deg, rgba(3,15,21,0.78) 0%, rgba(3,15,21,0.48) 50%, rgba(3,15,21,0.72) 100%)"
-                  : "linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.30) 100%)",
+                  ? "linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.72) 100%)"
+                  : "linear-gradient(90deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.10) 50%, rgba(0,0,0,0.28) 100%)",
               }}
             />
 
@@ -717,13 +740,13 @@ export default function Accueil() {
               className="absolute inset-0"
               style={{
                 background: isDark
-                  ? "linear-gradient(to top, rgba(3,15,21,0.72), transparent 45%)"
-                  : "linear-gradient(to top, rgba(0,0,0,0.45), transparent 50%)",
+                  ? "linear-gradient(to top, rgba(0,0,0,0.78), transparent 52%)"
+                  : "linear-gradient(to top, rgba(0,0,0,0.38), transparent 52%)",
               }}
             />
           </div>
 
-          <div className="relative z-10 mx-auto grid min-h-[620px] max-w-7xl grid-cols-1 items-center gap-10 px-6 py-12 md:px-[6%] lg:grid-cols-2 lg:gap-14">
+          <div className="relative z-10 mx-auto grid min-h-[560px] md:min-h-[600px] max-w-7xl grid-cols-1 items-center gap-10 px-6 py-12 md:px-[6%] lg:grid-cols-2 lg:gap-14">
             <motion.div
               variants={stagger}
               initial="hidden"
@@ -734,7 +757,7 @@ export default function Accueil() {
                 variants={fadeUp}
                 className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/20 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur sm:text-xs"
               >
-                <span className="h-2 w-2 animate-pulse rounded-full bg-[#00DFFB]" />
+                <span className={`h-2 w-2 animate-pulse rounded-full ${isDark ? "bg-white" : "bg-black"}`} />
                 Recherche un stage de fin d'études
               </motion.div>
 
@@ -752,12 +775,7 @@ export default function Accueil() {
                 Je calcule et
                 <br />
                 dimensionne des{" "}
-                <span
-                  className="bg-clip-text text-transparent bg-linear-to-br from-[#011C5F] to-[#015CE1] "
-                  style={{
-                    backgroundImage: LOGO_COLORS.gradient,
-                  }}
-                >
+                <span className={isDark ? "text-white" : "text-[#011C5F]"}>
                   ouvrages
                 </span>
                 <br />
@@ -802,12 +820,12 @@ export default function Accueil() {
               initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative flex min-h-[390px] items-center justify-center"
+              className="relative flex min-h-[340px] items-center justify-center"
             >
               <div className="relative flex items-end justify-center gap-3 sm:gap-4">
                 {/* Portrait principal */}
                 <div
-                  className="relative z-10 h-[390px] w-[245px] shadow-xl shrink-0 overflow-hidden rounded-[26px] border border-white/15 sm:h-[430px] sm:w-[285px]"
+                  className="relative z-10 h-[320px] w-[205px] shadow-xl shrink-0 overflow-hidden rounded-[26px] border border-white/15 sm:h-[360px] sm:w-[235px]"
                   
                 >
                   <img
@@ -833,7 +851,7 @@ export default function Accueil() {
                   initial={{ opacity: 0, x: 25, rotate: 2 }}
                   animate={{ opacity: 1, x: 0, rotate: 2 }}
                   transition={{ duration: 0.7, delay: 0.35 }}
-                  className="relative hidden h-[300px] w-[190px] shrink-0 overflow-hidden rounded-[24px] border border-white/15 sm:block"
+                  className="relative hidden h-[245px] w-[155px] shrink-0 overflow-hidden rounded-[24px] border border-white/15 sm:block"
                   style={{
                     boxShadow:
                       "0 18px 45px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06)",
@@ -902,9 +920,7 @@ export default function Accueil() {
 
         {/* LOGICIELS */}
         <div
-          className={`border-y ${border} ${
-            isDark ? "bg-[#011C5F]/20" : "bg-[#0198FB]/5"
-          } px-6 py-5 md:px-[6%]`}
+          className={`border-y ${border} px-6 py-5 md:px-[6%]`}
         >
           <p
             className={`mb-3 text-[12px] font-semibold uppercase tracking-widest ${textMut}`}
@@ -919,9 +935,9 @@ export default function Accueil() {
                 className="group flex flex-col items-center gap-1"
               >
                 <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-xl border ${border} ${bgCard} transition-colors`}
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl border ${border} ${bgCard}  transition-colors`}
                 >
-                  <Icon size={18} color={color} />
+                  <Icon size={18} style={{ color: color }} />
                 </div>
 
                 <span className={`text-[11px] ${textMut}`}>
@@ -994,7 +1010,7 @@ export default function Accueil() {
                     <span
                       className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white"
                       style={{
-                        backgroundColor: "rgba(1,92,225,0.94)",
+                        backgroundColor: isDark ? "rgba(255,255,255,0.16)" : "rgba(1,28,95,0.90)",
                       }}
                     >
                       {projetItem.Tag}
@@ -1064,7 +1080,7 @@ export default function Accueil() {
         <Divider accent={accent} />
 
         {/* EN ACTION — PHOTOS + VIDÉOS */}
-        <section id="EnAction" className="px-6 py-16 md:px-[6%]">
+        <section id="EnAction" className="px-6 py-10 md:px-[6%] md:py-12">
           <motion.div
             variants={stagger}
             initial="hidden"
@@ -1074,7 +1090,7 @@ export default function Accueil() {
             <motion.div variants={fadeUp}>
               <SectionLabel accent={accent}>En action</SectionLabel>
 
-              <div className="mb-3 flex flex-wrap items-end justify-between gap-4">
+              <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
                 <div>
                   <h2
                     className={`text-2xl font-extrabold tracking-tight sm:text-3xl ${textMain}`}
@@ -1107,12 +1123,12 @@ export default function Accueil() {
             <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-12">
               <motion.figure
                 variants={fadeLeft}
-                className={`group relative overflow-hidden rounded-3xl border ${border} ${bgCard} lg:col-span-7`}
+                className={`group relative overflow-hidden rounded-2xl border ${border} ${bgCard} lg:col-span-6`}
               >
                 <img
                   src="/travail-equipe-laptop.webp"
                   alt="Travail en équipe autour d'un ordinateur"
-                  className="h-[330px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  className="h-[240px] sm:h-[260px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                 />
 
                 <div
@@ -1130,12 +1146,12 @@ export default function Accueil() {
 
               <motion.figure
                 variants={fadeRight}
-                className={`group relative overflow-hidden rounded-3xl border ${border} ${bgCard} lg:col-span-5`}
+                className={`group relative overflow-hidden rounded-2xl border ${border} ${bgCard} lg:col-span-6`}
               >
                 <img
                   src="/atelier-treillis.webp"
                   alt="Équipe travaillant sur une structure treillis expérimentale"
-                  className="h-[330px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+                  className="h-[240px] sm:h-[260px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.025]"
                 />
 
                 <div
@@ -1153,7 +1169,7 @@ export default function Accueil() {
 
               <motion.article
                 variants={fadeUp}
-                className={`overflow-hidden rounded-3xl border ${border} ${bgCard} lg:col-span-6`}
+                className={`overflow-hidden rounded-2xl border ${border} ${bgCard} lg:col-span-6`}
               >
                 <div className="relative bg-black">
                   <video
@@ -1161,7 +1177,7 @@ export default function Accueil() {
                     preload="metadata"
                     playsInline
                     poster="/travail-equipe-laptop.webp"
-                    className="aspect-video w-full object-cover"
+                    className="h-[220px] sm:h-[235px] w-full object-cover"
                   >
                     <source
                       src="/atelier-structure-1.mp4"
@@ -1176,7 +1192,7 @@ export default function Accueil() {
                   </div>
                 </div>
 
-                <div className="p-5">
+                <div className="p-4">
                   <h3
                     className={`font-bold ${textMain}`}
                   >
@@ -1195,7 +1211,7 @@ export default function Accueil() {
 
               <motion.article
                 variants={fadeUp}
-                className={`overflow-hidden rounded-3xl border ${border} ${bgCard} lg:col-span-6`}
+                className={`overflow-hidden rounded-2xl border ${border} ${bgCard} lg:col-span-6`}
               >
                 <div className="relative bg-black">
                   <video
@@ -1205,7 +1221,7 @@ export default function Accueil() {
                     playsInline
                     disablePictureInPicture
                     poster="/atelier-treillis.webp"
-                    className="aspect-video w-full cursor-pointer object-cover"
+                    className="h-[220px] sm:h-[235px] w-full cursor-pointer object-cover"
                     onClick={toggleAtelierStructure2}
                     onPlay={() => setAtelierStructure2Playing(true)}
                     onPause={() => setAtelierStructure2Playing(false)}
@@ -1250,11 +1266,11 @@ export default function Accueil() {
 
                   <div className="pointer-events-none absolute left-4 top-4 flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur">
                     <FaPlayCircle />
-                    Séquence 02 · Sans son
+                    Séquence 02 
                   </div>
                 </div>
 
-                <div className="p-5">
+                <div className="p-4">
                   <h3 className={`font-bold ${textMain}`}>
                     Séquence de travail pratique
                   </h3>
@@ -1358,7 +1374,7 @@ export default function Accueil() {
                   style={{
                     boxShadow: isDark
                       ? "none"
-                      : "0 2px 16px rgba(1,92,225,0.08)",
+                      : "0 2px 16px rgba(0,0,0,0.06)",
                   }}
                 >
                   <div
@@ -1435,7 +1451,7 @@ export default function Accueil() {
                       style={{
                         boxShadow: isDark
                           ? "0 4px 24px rgba(0,0,0,0.4)"
-                          : "0 4px 32px rgba(1,92,225,0.12)",
+                          : "0 4px 32px rgba(0,0,0,0.08)",
                       }}
                     >
                       <div className="flex items-start justify-between px-6 pb-3 pt-5">
@@ -1534,7 +1550,7 @@ export default function Accueil() {
                   className="relative overflow-hidden rounded-2xl"
                   style={{
                     boxShadow:
-                      "0 20px 60px rgba(1,92,225,0.28)",
+                      "0 20px 60px rgba(0,0,0,0.20)",
                     maxWidth: 380,
                   }}
                 >
@@ -1822,7 +1838,7 @@ export default function Accueil() {
                       style={{
                         boxShadow: isDark
                           ? "none"
-                          : "0 2px 16px rgba(1,92,225,0.08)",
+                          : "0 2px 16px rgba(0,0,0,0.06)",
                       }}
                     >
                       <p
@@ -1965,7 +1981,7 @@ export default function Accueil() {
                   style={{
                     boxShadow: isDark
                       ? "none"
-                      : "0 4px 32px rgba(1,92,225,0.12)",
+                      : "0 4px 32px rgba(0,0,0,0.08)",
                   }}
                 >
                   <div>
@@ -2014,7 +2030,7 @@ export default function Accueil() {
 
                   <div>
                     <label
-                      className={`mb-1.5 block text-xs font-semibold ${textMut}`}
+                      className={`mb-1.5 block text-xs font-semibold  ${isDark? 'text-white' : 'text-black'}`}
                     >
                       Message
                     </label>
