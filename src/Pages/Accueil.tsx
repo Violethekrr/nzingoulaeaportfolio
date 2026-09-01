@@ -848,10 +848,10 @@ export default function Accueil() {
 
                 {/* Deuxième portrait */}
                 <motion.div
-                  initial={{ opacity: 0, x: 25, rotate: 2 }}
-                  animate={{ opacity: 1, x: 0, rotate: 2 }}
+                  initial={{ opacity: 0, x: 25}}
+                  animate={{ opacity: 1, x: 0}}
                   transition={{ duration: 0.7, delay: 0.35 }}
-                  className="relative hidden h-[245px] w-[155px] shrink-0 overflow-hidden rounded-[24px] border border-white/15 sm:block"
+                  className="relative hidden  h-[245px] w-[155px] shrink-0 overflow-hidden rounded-[24px] border border-white/15 sm:block"
                   style={{
                     boxShadow:
                       "0 18px 45px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.06)",
@@ -880,7 +880,7 @@ export default function Accueil() {
               </div>
 
               <div
-                className={`absolute right-0 sm:left-120 bottom-4 z-50 w-[175px] overflow-hidden rounded-2xl border ${border} ${bgCard} shadow-2xl sm:block lg:-right-2`}
+                className={`absolute hidden lg:block right-0 sm:left-120 bottom-4 z-50 w-[175px] overflow-hidden rounded-2xl border ${border} ${bgCard} shadow-2xl  lg:-right-2`}
               >
                 <img
                   src="/r7-modele.webp"
@@ -903,7 +903,7 @@ export default function Accueil() {
               </div>
 
               <div
-                className={`absolute -left-2 bottom-10 z-50 rounded-2xl border ${border} ${bgCard} px-4 py-3 shadow-xl sm:block`}
+                className={`absolute hidden lg:block -left-2 bottom-10 z-50 rounded-2xl border ${border} ${bgCard} px-4 py-3 shadow-xl `}
               >
                 <p
                   className={`text-3xl font-extrabold ${textMain}`}
