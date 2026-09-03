@@ -203,7 +203,7 @@ const experiencesData = [
   },
   {
     Id: 2,
-    annee: "Septembre 2023",
+    annee: "Septembre 2023 - À ce jour  (En cours)",
     Titre: "Burger King",
     Poste: "Équipier polyvalent",
     Icon: FaClipboardCheck,
