@@ -779,15 +779,14 @@ export default function Accueil() {
                   ouvrages
                 </span>
                 <br />
-                en béton armé.
+                en béton armé et charpente métallique.
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
                 className="mb-6 max-w-md text-sm leading-6 text-white/80"
               >
-                Master 2 Génie Civil — Hydraulique, Ouvrages et
-                Environnement à Polytech Lille. Calcul,
+                Master 2 Génie Civil à Polytech Lille. Calcul,
                 dimensionnement, modélisation numérique et lecture
                 concrète du chantier.
               </motion.p>
