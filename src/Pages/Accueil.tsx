@@ -753,13 +753,7 @@ export default function Accueil() {
               animate="show"
               className="max-w-xl"
             >
-              <motion.div
-                variants={fadeUp}
-                className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/20 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur sm:text-xs"
-              >
-                <span className={`h-2 w-2 animate-pulse rounded-full ${isDark ? "bg-white" : "bg-black"}`} />
-                Recherche un stage de fin d'études
-              </motion.div>
+             
 
               <motion.p
                 variants={fadeUp}
@@ -774,9 +768,9 @@ export default function Accueil() {
               >
                 Je calcule et
                 <br />
-                dimensionne des{" "}
+                dimensionne  des{" "}
                 <span className={isDark ? "text-white" : "text-[#011C5F]"}>
-                  ouvrages
+                 fondations, des ouvrages, 
                 </span>
                 <br />
                 en béton armé et charpente métallique.
@@ -784,7 +778,7 @@ export default function Accueil() {
 
               <motion.p
                 variants={fadeUp}
-                className="mb-6 max-w-md text-sm leading-6 text-white/80"
+                className="mb-6 max-w-md text-sm lg:text-base leading-6 text-white/80"
               >
                 Master 2 Génie Civil à Polytech Lille. Calcul,
                 dimensionnement, modélisation numérique et lecture
@@ -824,25 +818,15 @@ export default function Accueil() {
               <div className="relative flex items-end justify-center gap-3 sm:gap-4">
                 {/* Portrait principal */}
                 <div
-                  className="relative z-10 h-[320px] w-[205px] shadow-xl shrink-0 overflow-hidden rounded-[26px] border border-white/15 sm:h-[360px] sm:w-[235px]"
+                  className="relative flex gap-4 z-10 h-[320px] w-[205px] shadow-xl shrink-0 overflow-hidden rounded-[26px] border border-white/15 sm:h-[360px] sm:w-[235px]"
                   
                 >
+                  
                   <img
                     src="/eddy-pro.webp"
                     alt="Portrait professionnel d'Eddy Anderson NZINGOULA"
                     className="absolute inset-0 h-full w-full object-cover object-top"
                   />
-
-                 
-
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
-                      Génie civil
-                    </p>
-                    <p className="text-lg font-extrabold text-white">
-                      Structures · Hydraulique
-                    </p>
-                  </div>
                 </div>
 
                 {/* Deuxième portrait */}
@@ -902,16 +886,34 @@ export default function Accueil() {
               </div>
 
               <div
-                className={`absolute hidden lg:block -left-2 bottom-10 z-50 rounded-2xl border ${border} ${bgCard} px-4 py-3 shadow-xl `}
+                className={`absolute flex items-center gap-4 -bottom-8 md:-left-4 lg:-left-19 xl:-left-6  z-50 rounded-2xl border ${border} ${bgCard} px-4 py-3 shadow-xl `}
               >
-                <p
-                  className={`text-3xl font-extrabold ${textMain}`}
-                >
-                  R+7
-                </p>
-                <p className={`text-[10px] ${textMut}`}>
-                  bâtiment dimensionné
-                </p>
+               
+                <div>
+                    <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${textMut}`}>
+                      Génie civil
+                    </p>
+                    <p className={`text-sm font-bold ${textMain}`}>
+                       · Structures métalliques
+                      <br></br>
+                       · Béton armée
+                      <br></br>
+                       · Géotechnique
+                      <br></br>
+                      · Hydraulique
+                    </p>
+                </div>
+                 <div className={`border-l pl-3`} >
+                  <p
+                    className={`text-3xl font-extrabold ${textMain}`}
+                  >
+                    R+7
+                  </p>
+                  <p className={`text-[10px] ${textMut}`}>
+                    bâtiment dimensionné
+                  </p>
+                </div>
+
               </div>
             </motion.div>
           </div>
