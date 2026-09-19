@@ -770,7 +770,7 @@ export default function Accueil() {
                 <br />
                 dimensionne  des{" "}
                 <span className={isDark ? "text-white" : "text-[#011C5F]"}>
-                 fondations, des ouvrages, 
+                 fondations, des ouvrages
                 </span>
                 <br />
                 en béton armé et charpente métallique.
