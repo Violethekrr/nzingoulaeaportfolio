@@ -9,7 +9,7 @@ interface ProfilData {
   bio: string; disponibilite: string;
   email: string; telephone: string; localisation: string;
   github: string; 
-  // linkedin: string;
+  linkedin: string;
   portfolio: string;
   formation: string; ecole: string; anneeFormation: string;
   bac: string; lyceeBac: string; anneeBac: string;
@@ -27,7 +27,7 @@ const defaultProfil: ProfilData = {
   email: "nzingoulaeddy@gmail.com", telephone: "07 66 32 85 03",
   localisation: "Villeneuve d'Ascq (59650)",
   github: "\u00c0 compl\u00e9ter",
-  // linkedin: "\u00c0 compl\u00e9ter",
+  linkedin: "Eddy NZINGOULA",
   portfolio: "\u00c0 compl\u00e9ter",
   formation: "Master 2 G\u00e9nie Civil \u2014 Hydraulique, Ouvrages et Environnement",
   ecole: "Polytech Lille \u2014 Universit\u00e9 de Lille",
@@ -140,7 +140,7 @@ export default function Profil({ onClose }: { onClose: () => void }) {
             <FieldRow label="Téléphone"    value={profil.telephone}    {...sharedProps} />
             <FieldRow label="Localisation" value={profil.localisation} {...sharedProps} />
             <FieldRow label="Portfolio"    value={profil.portfolio}       {...sharedProps} />
-            {/* <FieldRow label="LinkedIn"     value={profil.linkedin}     {...sharedProps} /> */}
+            <FieldRow label="LinkedIn"     value={profil.linkedin}     {...sharedProps} />
             </tbody>
         </table>
       );

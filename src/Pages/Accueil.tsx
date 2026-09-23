@@ -1925,8 +1925,8 @@ export default function Accueil() {
                   {
                     Icon: FaLinkedin,
                     label: "LinkedIn",
-                    val: "À compléter",
-                    href: "#Contact",
+                    val: "Eddy NZINGOULA",
+                    href: "https://www.linkedin.com/in/eddyandersonnzingoula",
                   },
                 ].map(({ Icon, label, val, href }) => (
                   <a
