@@ -51,8 +51,23 @@ import type { ProjetType } from "../types";
    /r7-poteau.jpg
    /r7-plans.jpg
    /r7-modele.jpg
-   /CV-Eddy-Nzingoula.pdf
+   /CV-Eddy-Nzingoula.pdf      (Structures - défaut)
+   /CV-Eddy-Nzingoula2.pdf     (Hydraulique / Géotechnique)
+   /CV-Eddy-Nzingoula3.pdf     (Conduite de travaux)
 ========================================================= */
+// Sélection du CV à télécharger en fonction du paramètre ?cv=...
+// Sans paramètre : CV Structures (par défaut).
+const CV_FILES: Record<string, string> = {
+  default: "/CV-Eddy-Nzingoula.pdf",
+  "hydro-geo": "/CV-Eddy-Nzingoula2.pdf",
+  "conduite-travaux": "/CV-Eddy-Nzingoula3.pdf",
+};
+
+function getCvDownloadUrl() {
+  const cvId = new URLSearchParams(window.location.search).get("cv");
+  return cvId && CV_FILES[cvId] ? CV_FILES[cvId] : CV_FILES.default;
+}
+
 const LOGO_COLORS = {
   navy: "#011C5F",
   deepBlue: "#011C5F",
@@ -798,7 +813,7 @@ export default function Accueil() {
                 </a>
 
                 <a
-                  href="/CV-Eddy-Nzingoula.pdf"
+                  href={getCvDownloadUrl()}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-black/15 px-4 py-2.5 text-xs font-semibold text-white backdrop-blur transition-colors hover:bg-white/10 sm:text-sm"
@@ -1964,7 +1979,7 @@ export default function Accueil() {
                 ))}
 
                 <a
-                  href="/CV-Eddy-Nzingoula.pdf"
+                  href={getCvDownloadUrl()}
                   target="_blank"
                   rel="noreferrer"
                   className="flex w-fit items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
