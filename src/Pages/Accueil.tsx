@@ -59,8 +59,9 @@ import type { ProjetType } from "../types";
 // Sans paramètre : CV Structures (par défaut).
 const CV_FILES: Record<string, string> = {
   default: "/CV-Eddy-Nzingoula.pdf",
-  "hydro-geo": "/CV-Eddy-Nzingoula2.pdf",
-  "conduite-travaux": "/CV-Eddy-Nzingoula3.pdf",
+  "geo": "/CV-Eddy-Nzingoula2.pdf",
+  "hydro": "/CV-Eddy-Nzingoula3.pdf",
+  "conduite-travaux": "/CV-Eddy-Nzingoula4.pdf",
 };
 
 function getCvDownloadUrl() {
